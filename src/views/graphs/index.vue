@@ -81,7 +81,7 @@ const activeGraphKey = ref<GraphKey>(GRAPH_DICTIONARY.KNOWLEDGE_GRAPH);
 
 const selectedNodes = reactive<Record<string, Object | null>>({});
 
-let graphStore=getDemoGraphs();
+const graphStore=reactive<Record<GraphKey, Object>>(getDemoGraphs())
 
 const handleGraphButtonClick = (id: number) => {
   graphs[activeGraphKey.value] = JSON.parse(JSON.stringify(graphStore[activeGraphKey.value][id].graph));

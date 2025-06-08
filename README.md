@@ -1,5 +1,40 @@
-# Vue 3 + TypeScript + Vite
+# 图谱展示组件项目
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 项目简介
+这是一个基于 Vue 3 + Vite + TypeScript 的图谱展示组件项目，支持动态加载图谱数据并进行可视化展示，适用于d3力导向图，Echarts横向树图场景。
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## 🎯 项目目的
+
+接触过项目用 D3 力导图和 ECharts 的 Tree 图，刚接触感觉是两坨难用
+
+自发写了个 demo给组里用，希望减轻组内同学使用这两个图做可视化的的负担。这个项目抛砖引玉，希望大家用得上，提意见和建议，或者提交贡献
+---
+
+## 功能特性
+
+- **动态数据加载**：支持从接口或静态数据文件加载图谱信息。
+- **多样化布局**：支持树状、力导向布局方式与便捷切换，节点展开保持同步。
+- **多数据源切换**：便捷从切换显示并保留之前的状态（每个大类仅保留一个）
+- **动态变化窗口**：力导向图和树图的画布大小随内容的增加和减少动态改变，并附有滑动条
+---
+
+## 🛠 技术栈
+
+- [Vue 3](https://vuejs.org/) + [Composition API](https://vuejs.org/guide/extras/composition-api-faq.html)
+- [Vite](https://vitejs.dev/) - 极速构建工具
+- [TypeScript](https://www.typescriptlang.org/) - 类型安全
+- 图形渲染库：
+    -  [D3.js](https://d3js.org/) / [ECharts](https://echarts.apache.org/)
+
+## 📬 联系方式
+
+- 维护者：李天扬
+- 邮箱：<lisgen233@qq.com>
+
+## 运行
+
+```bash
+npm install
+npm run dev
+
+
