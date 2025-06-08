@@ -1,0 +1,79 @@
+@use "mixins";
+//图谱展示样式表
+.tree-graph {
+  min-width: 100%; /* 设置宽度为100% */
+  min-height: 100%; /* 设置高度为100% */
+  border: 0; /* 去掉边框 */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* 使内容居中对齐，确保背景图片完全可见 */
+  //padding: 20px;
+  margin: 0;
+  background-color: transparent;
+
+}
+
+//包围图谱的容器
+.graph-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-image: url('@/assets/images/graph-bg3.png');
+  background-size: 130% 300%; /* 背景图片全覆盖 */
+  background-repeat: no-repeat; /* 不重复 */
+  background-position: center; /* 图片居中 */
+  box-shadow: var(--el-box-shadow);
+  border-radius: 15px;
+  //padding: 0;
+}
+
+/* 第二步中的节点信息框 */
+//需要手动设置高度
+.node-info-step2 {
+  //height: 200px;
+  background-image: url("@/assets/images/content-bg-2.jpg"); /* 使用与以上框相同的背景图 */
+  background-size: 100% 100%; /* 背景图片全覆盖 */
+  background-repeat: no-repeat; /* 不重复 */
+  background-position: center; /* 图片居中 */
+  border: 2px solid transparent;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-top: 10px;
+  color: white;
+  padding: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .info_text {
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    justify-content: flex-start;
+  }
+}
+
+
+.diagnosis-graph-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  /* 图谱展示框（专家和患者） */
+  border: 2px solid white; /* 添加白色边框 */
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 0;
+  /* 应用悬停效果混入 */
+  @include mixins.hover-elevate-shadow;
+}
+
+
+
+
