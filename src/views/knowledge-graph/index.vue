@@ -38,16 +38,12 @@ import KnowledgeGraph from '@/components/common/ForceGraphComponent.vue'; // 图
 // 树结构组件
 import {type CSSProperties, onMounted, ref} from 'vue';
 import {GRAPH_TYPE} from "@/assets/dictionarys/graphType";
-import {
-  Search
-} from '@element-plus/icons-vue'
 import NodeInfoComponent from "@/components/common/NodeInfoComponent.vue";
 import TreeGraphComponent from "@/components/common/TreeGraphComponent.vue";
 import {collapseAllNodes, setTreeNodeIds} from "@/assets/scripts/graphUtils";
 import {getDemoKnowledgeGraph} from "@/assets/graphJSON/demoKnowledgeGraph.ts";
 
 const graphContainer = ref(null);
-const inputValue = ref(null);
 const selectedNode = ref<Node | null>(null);
 const graphData = ref({});
 const selectedGraph = ref("")

@@ -5,7 +5,7 @@
 
 <script setup lang="ts">
 import * as d3 from 'd3';
-import {ref, watch, defineEmits, nextTick} from 'vue';
+import {ref, watch, nextTick} from 'vue';
 import {GRAPH_TYPE} from "@/assets/dictionarys/graphType";
 import {toggleCollapse} from "@/assets/scripts/graphUtils";
 
