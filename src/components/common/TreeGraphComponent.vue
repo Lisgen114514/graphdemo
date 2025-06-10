@@ -86,7 +86,7 @@ function updateChart(data) {
 
 watch(() => graphData.value,
     (newGraphData) => {
-      // console.log("Tree watch 图谱数据", graphData.value)
+      console.log("Tree watch 图谱数据", graphData.value)
       nextTick(() => {
         updateChart(newGraphData);
       })

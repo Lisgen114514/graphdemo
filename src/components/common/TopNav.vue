@@ -2,16 +2,9 @@
   <div class="top-nav">
     <div class="header-box">
       <div class="auth">
-        <div class="left">
-          <router-link to="/login" class="login-link">登陆账号</router-link>
-          <span>{{ currentDate }}</span>
-        </div>
-        <div class="text">
-          {{ currentTime }}
-        </div>
       </div>
       <div class="head-middle">
-        医疗诊断系统
+        图展示demo
       </div>
       <div class="right">
       </div>
@@ -21,25 +14,6 @@
 </template>
 
 <script setup lang="ts">
-import {ref, onMounted, onUnmounted} from 'vue';
-import dayjs from 'dayjs';
-
-const currentDate = ref(dayjs().format('YYYY.M.D'));
-const currentTime = ref(dayjs().format('HH:mm:ss'));
-
-const updateTime = () => {
-  currentTime.value = dayjs().format('HH:mm:ss');
-};
-
-onMounted(() => {
-  // Update time every second
-  const intervalId = setInterval(updateTime, 1000);
-
-  // Clean up the interval when the component is unmounted
-  onUnmounted(() => {
-    clearInterval(intervalId);
-  });
-});
 </script>
 
 <style scoped lang="scss">

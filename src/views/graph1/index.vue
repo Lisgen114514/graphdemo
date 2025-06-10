@@ -2,7 +2,7 @@
   <el-container class="main-container">
     <el-container class="graph-main">
       <el-header class="header">
-        <el-text size="large" style="color: white">专家图谱</el-text>
+        <el-text size="large" style="color: white">人工智能</el-text>
       </el-header>
       <el-main class="graph-container" :style="overflowStyle">
         <KnowledgeGraph v-model:graph-data="graphData" v-model:selected-node="selectedNode"
@@ -41,7 +41,7 @@ import {GRAPH_TYPE} from "@/assets/dictionarys/graphType";
 import NodeInfoComponent from "@/components/common/NodeInfoComponent.vue";
 import TreeGraphComponent from "@/components/common/TreeGraphComponent.vue";
 import {collapseAllNodes, setTreeNodeIds} from "@/assets/scripts/graphUtils";
-import {getDemoKnowledgeGraph} from "@/assets/graphJSON/demoKnowledgeGraph.ts";
+import {getDemoKnowledgeGraph} from "@/assets/graphJSON/demoGraph1.ts";
 
 const graphContainer = ref(null);
 const selectedNode = ref<Node | null>(null);

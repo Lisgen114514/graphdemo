@@ -9,6 +9,6 @@ export type GraphKey = typeof GRAPH_DICTIONARY[keyof typeof GRAPH_DICTIONARY];
 
 // constants.ts 或 graphConstants.ts
 export const GRAPH_LABELS: Record<GraphKey, string> = {
-    knowledgeGraph: '专家图谱',
-    patientGraph: '患者图谱',
+    [GRAPH_DICTIONARY.KNOWLEDGE_GRAPH]: '自然科学',
+    [GRAPH_DICTIONARY.PATIENT_GRAPH]: '社会科学',
 };

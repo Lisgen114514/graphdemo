@@ -45,7 +45,8 @@ const flattenTree = (data) => {
     });
 
     if (parent) {
-      links.push({source: parent.id, target: node.id});
+      // links.push({source: parent.id, target: node.id});
+      links.push({source: parent.show_id, target: node.show_id});
     }
 
     if (!node.collapsed && node.children && node.children.length) {
@@ -76,7 +77,7 @@ const drawGraph = () => {
   // 力导向图布局
   simulation = d3
       .forceSimulation(nodes)
-      .force('link', d3.forceLink(links).id(d => d.id).distance(100))
+      .force('link', d3.forceLink(links).id(d => d.show_id).distance(100))
       .force('charge', d3.forceManyBody().strength(-300))
       .force('center', d3.forceCenter(width / 2, height / 2))
   // 绘制连线
@@ -86,7 +87,7 @@ const drawGraph = () => {
       .data(links)
       .enter()
       .append('line')
-      .attr('stroke', '#aaa')
+      .attr('stroke', 'black')
       .attr('stroke-width', 2);
 
   // 绘制节点

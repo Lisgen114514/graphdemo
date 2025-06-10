@@ -7,7 +7,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'knowledge-graph',
-      component: () => import('@/views/knowledge-graph/index.vue')
+      component: () => import('@/views/graph1/index.vue')
     },
     {
       path: '/graphs',

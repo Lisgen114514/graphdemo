@@ -72,6 +72,7 @@ import TreeGraphComponent from "@/components/common/TreeGraphComponent.vue";
 import {GRAPH_DICTIONARY, GRAPH_LABELS, type GraphKey} from "@/assets/dictionarys/graphDictionary";
 import NodeInfoComponent from "@/components/common/NodeInfoComponent.vue";
 import {getDemoGraphs} from "@/assets/graphJSON/demoGraphs.ts";
+import {collapseAllNodes, setTreeNodeIds} from "@/assets/scripts/graphUtils.ts";
 
 
 //初始化图库
@@ -84,8 +85,13 @@ const selectedNodes = reactive<Record<string, Object | null>>({});
 const graphStore=reactive<Record<GraphKey, Object>>(getDemoGraphs())
 
 const handleGraphButtonClick = (id: number) => {
-  graphs[activeGraphKey.value] = JSON.parse(JSON.stringify(graphStore[activeGraphKey.value][id].graph));
-  graphs[activeGraphKey.value].collapsed = false;
+  let resGraphData = JSON.parse(JSON.stringify(graphStore[activeGraphKey.value][id].graph))
+  // 为所有节点设置show_id，以便控制
+  setTreeNodeIds(resGraphData);
+  // 初始化时收缩所有节点
+  collapseAllNodes(resGraphData);
+  resGraphData.collapsed=false;
+  graphs[activeGraphKey.value]=resGraphData;
   selectedNodes[activeGraphKey.value] = graphs[activeGraphKey.value];
 }
 
@@ -93,6 +99,10 @@ onMounted(() => {
   // 初始化每个 key 对应的激活索引（可选，设默认激活第一项）
   for (const key in graphStore) {
     let resGraphData = JSON.parse(JSON.stringify(graphStore[key][0].graph));
+    // 为所有节点设置show_id，以便控制
+    setTreeNodeIds(resGraphData);
+    // 初始化时收缩所有节点
+    collapseAllNodes(resGraphData);
     resGraphData.collapsed = false;
     graphs[key] = resGraphData;
     selectedNodes[key] = resGraphData;

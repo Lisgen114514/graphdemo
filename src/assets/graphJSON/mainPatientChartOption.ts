@@ -22,11 +22,6 @@ export function getDefaultChartOption() {
                 expandAndCollapse: true,
                 initialTreeDepth: 1,//lrt设置初始展开层级
                 symbolSize: 8,  // 增大节点的大小
-                /*                layout: {
-                                    hierarchy: {
-                                        separation: 150 // 增加同一层级节点的间距 (数值越大，间距越大)
-                                    }
-                                },*/
                 label: {
                     position: 'top',
                     rotate: 0,
